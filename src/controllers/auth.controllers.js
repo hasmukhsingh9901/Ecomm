@@ -39,20 +39,20 @@ export const signup = async (req, res) => {
     if (existingUser) {
       res.status(400).send({ message: "User already exists" });
       return res.redirect("/");
-    } else {
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(password, salt);
-
-      const newUser = new User({
-        fullName,
-        email,
-        password: hashedPassword,
-      });
-
-      await newUser.save();
-      res.status(201).send({ message: "User created successfully" });
-      return res.redirect("/shop");
     }
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const newUser = new User({
+      fullName,
+      email,
+      password: hashedPassword,
+    });
+
+    await newUser.save();
+    res.status(201).send({ message: "User created successfully" });
+    return res.redirect("/shop");
   } catch (error) {
     res.status(500).send({ message: "Server error" });
   }
