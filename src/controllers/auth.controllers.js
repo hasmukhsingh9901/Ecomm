@@ -15,10 +15,10 @@ export const login = async (req, res) => {
         sameSite: "none",
         secure: true,
       });
-      return res.redirect("/shop");
+      return res.status(200).send({ message: "Login successful" });
     } else {
       res.status(401).send({ message: "Invalid email or password" });
-      return res.redirect("/");
+
     }
   } catch (error) {
     res.status(500).send({ message: "Server error" });
@@ -27,7 +27,7 @@ export const login = async (req, res) => {
 
 export const logout = async (req, res) => {
   res.clearCookie("token");
-  return res.redirect("/");
+  return res.status(200).send({ message: "Logout successful" });
 };
 
 export const signup = async (req, res) => {
@@ -38,7 +38,7 @@ export const signup = async (req, res) => {
 
     if (existingUser) {
       res.status(400).send({ message: "User already exists" });
-      return res.redirect("/");
+
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -49,11 +49,13 @@ export const signup = async (req, res) => {
       email,
       password: hashedPassword,
     });
+    console.log(newUser)
 
     await newUser.save();
     res.status(201).send({ message: "User created successfully" });
-    return res.redirect("/shop");
+
   } catch (error) {
+    console.log(error)
     res.status(500).send({ message: "Server error" });
   }
 };

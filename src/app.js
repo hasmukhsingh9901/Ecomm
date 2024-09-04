@@ -44,9 +44,9 @@ app.use(express.static("public"));
 app.use(cors());
 
 app.use("/", indexRoutes);
-app.use("/api/v1/owner", ownerRoutes);
-app.use("/api/v1/user", userRoutes);
-app.use("/api/v1/product",productRoutes);
+app.use("/owner", ownerRoutes);
+app.use("/user", userRoutes);
+app.use("/product",productRoutes);
 
 app.listen(port, () => {
   console.log(`Server started at PORT: ${port}`);
