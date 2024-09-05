@@ -4,9 +4,9 @@ import { protectRoute } from "../middlewares/auth.middleware.js";
 
 const router = express();
 
-router.post("/", protectRoute, cartController.getCartProducts);
+router.get("/", protectRoute, cartController.getCartProducts);
 router.post("/", protectRoute, cartController.addToCart);
-router.post("/", protectRoute, cartController.removeAllFromCart);
+router.delete("/", protectRoute, cartController.removeAllFromCart);
 router.post("/:id", protectRoute, cartController.updateQuantity);
 
 export default router;
