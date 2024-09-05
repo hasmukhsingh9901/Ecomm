@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const postSchema = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -12,6 +12,7 @@ const postSchema = new mongoose.Schema(
     },
     price: {
       type: Number,
+      min:0,
       required: [true, "Price is required"],
     },
     image: {
@@ -22,10 +23,14 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: [true, "Category is required"],
     },
+    isFeatured:{
+      type:Boolean,
+      default:false
+    }
   },
   {
     timestamps: true,
   }
 );
 
-export const Product = mongoose.model("Product", postSchema);
+export const Product = mongoose.model("Product", productSchema);

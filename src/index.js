@@ -9,6 +9,7 @@ import morgan from "morgan";
 
 // routes
 import authRoutes from "./routes/auth.route.js"
+import productRoutes from "./routes/product.route.js"
 
 // Utility functions to get the current file path and connect to the database
 import { fileURLToPath } from "url";
@@ -45,6 +46,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/api/auth", authRoutes);
+app.use("/api/products", productRoutes);
 
 // Configure Cloudinary with environment variables
 cloudinary.v2.config({
