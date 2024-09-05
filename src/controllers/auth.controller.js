@@ -3,8 +3,6 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
 
-
-
 const generateTokens = (userId) => {
   const accessToken = jwt.sign({ userId }, process.env.JWT_ACCESS_SECRET, {
     expiresIn: "15m",
@@ -57,21 +55,13 @@ const signUp = async (req, res, next) => {
     res.status(500).json({ message: error });
   }
 };
-const signIn = async (req, res, next) => {
-  try {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
-    if (!user) {
-    }
-  } catch (error) {
-    res.status(500).json({ message: error });
-  }
-};
+
 const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
+    console.log(email,password)
     const user = await User.findOne({ email });
-
+    console.log("User found:", user);
     if (user && (await user.comparePassword(password))) {
       const { accessToken, refreshToken } = generateTokens(user._id);
       setCookies(res, accessToken, refreshToken);
@@ -130,4 +120,4 @@ export const getProfile = (req, res) => {
   }
 }
 
-export const authController = { signUp, signIn, login, logOut };
+export const authController = { signUp, login, logOut };
