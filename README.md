@@ -54,11 +54,9 @@ npm install
 #### 5. Create .env file 
 
 ```bash
-APP_ENV = KEYS
-PORT = KEYS
-DEVELOPMENT_URL = KEYS
-PRODUCTION_URL = KEYS
-NODE_ENV = KEYS
+VITE_BASE_URL = KEYS
+VITE_CRYPTO_KEY = KEYS
+VITE_ENV = KEYS
 ```
 
 
