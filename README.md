@@ -1,10 +1,10 @@
-![Screenshot (196)](https://github.com/user-attachments/assets/c214d169-49c7-4887-940a-15d94c1d8e87)## Cloud Guradian
+## Cloud Guradian
 
 Cloud Guardian is a fully managed cloud security assessment platform designed specifically
 for small and medium-sized businesses (SMBs).
 
-![Cloud Guardian](![Uploading Screenshot (196).png…]()
-)
+![Screenshot (196)](https://github.com/user-attachments/assets/c214d169-49c7-4887-940a-15d94c1d8e87)
+
 
 
 
