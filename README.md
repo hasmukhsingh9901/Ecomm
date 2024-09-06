@@ -102,8 +102,8 @@ Technologies used in the project:
 * Jenkins CI/CD
 
 ### Code Contributors
-* Mohit Tiwari [mohit.ref@loktantram.com](mailto:mohit.ref@loktantram.com) 
-* Anurag Srivastava [anurag.ref@loktantram.com](mailto:anurag.ref@loktantram.com)
+* Deepak Kumar [deepak.kumar@refactorq.com](mailto:deepak.kumar@refactorq.com) 
+
 
 ### Support:
 If you are facing problem to setup the project then please ask in the
@@ -112,6 +112,6 @@ If you are facing problem to setup the project then please ask in the
 For Infra and access related queries please contact to the
 [DevOps Team](https://teams.microsoft.com/l/team/19%3aCWzBqr-0ckPqGahJTR3q4H0rlavxFNDLPNbv2Dshiic1%40thread.tacv2/conversations?groupId=269d19aa-48a1-4af3-a78c-610c478d7c8a&tenantId=2743a4d4-e89a-4824-b510-8fa0e7cc02ed)
 
-* Narsing Chinte [narsing.ref@loktantram.com](mailto:narsing.ref@loktantram.com)
-* Naveen Chilka [naveenchilka.con@loktantram.com](mailto:naveenchilka.con@loktantram.com)
+* Narsing Chinte [narsing.chinte@refactorq.com](mailto:narsing.chinte@refactorq.com)
+
  
