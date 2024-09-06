@@ -2,7 +2,7 @@ import { create } from "zustand";
 import axiosInstance from "../lib/axios";
 import { toast } from "react-hot-toast";
 
-export const useUserStore = create((set) => ({
+export const useUserStore = create((set, get) => ({
   user: null,
   loading: false,
   checkingAuth: true,
@@ -60,6 +60,19 @@ export const useUserStore = create((set) => ({
     } catch (error) {
       toast.error(error.response?.data?.message)
     }
+  },
+  refreshToken: async () => {
+    if (get().checkingAuth) return;
+    set({ checkingAuth: true });
 
+    try {
+      const response = await axiosInstance.post('/auth/refresh-token');
+
+      set({ checkingAuth: false });
+      return response && response.data;
+    } catch (error) {
+      set({ user: null, checkingAuth: false });
+      throw error;
+    }
   }
 }));
