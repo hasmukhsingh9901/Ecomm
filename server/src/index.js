@@ -32,6 +32,9 @@ const app = express();
 connectDB();
 
 // Middleware to handle CORS, cookies, JSON, URL-encoded data, static files, and logging
+app.use(express());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.json());

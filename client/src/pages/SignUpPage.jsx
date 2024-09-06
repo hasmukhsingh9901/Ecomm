@@ -1,8 +1,32 @@
 import { Link } from "react-router-dom";
 import { UserPlus, Mail, Lock, User, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { useUserStore } from "../store/useUserStore";
 
 const SignUpPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const { signup, loading } = useUserStore(); // Correctly destructuring the store
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    signup(formData);
+  };
+
   return (
     <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <motion.div
@@ -23,7 +47,7 @@ const SignUpPage = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <div className="bg-gray-800 py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="name"
@@ -36,7 +60,10 @@ const SignUpPage = () => {
                   <User className="h-5 w-5 text-gray-400" aria-hidden="true" />
                 </div>
                 <input
+                  value={formData.name}
+                  onChange={handleChange}
                   id="name"
+                  name="name" // Tracking the name input
                   type="text"
                   className="block w-full px-3 py-2 pl-10 bg-gray-700 border border-gray-600 rounded-md shadow-sm
 									 placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
@@ -57,7 +84,10 @@ const SignUpPage = () => {
                   <Mail className="h-5 w-5 text-gray-400" aria-hidden="true" />
                 </div>
                 <input
+                  value={formData.email}
+                  onChange={handleChange}
                   id="email"
+                  name="email" // Tracking email input
                   type="email"
                   className=" block w-full px-3 py-2 pl-10 bg-gray-700 border border-gray-600 
 									rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 
@@ -79,7 +109,10 @@ const SignUpPage = () => {
                   <Lock className="h-5 w-5 text-gray-400" aria-hidden="true" />
                 </div>
                 <input
+                  value={formData.password}
+                  onChange={handleChange}
                   id="password"
+                  name="password" // Tracking password input
                   type="password"
                   className=" block w-full px-3 py-2 pl-10 bg-gray-700 border border-gray-600 
 									rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
@@ -100,7 +133,10 @@ const SignUpPage = () => {
                   <Lock className="h-5 w-5 text-gray-400" aria-hidden="true" />
                 </div>
                 <input
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
                   id="confirmPassword"
+                  name="confirmPassword" // Tracking confirmPassword input
                   type="password"
                   className=" block w-full px-3 py-2 pl-10 bg-gray-700 border
 									border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"

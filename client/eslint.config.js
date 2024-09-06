@@ -34,6 +34,6 @@ export default [
         { allowConstantExport: true },
       ],
     },
-    "es-lint-disabled":true
+
   },
 ]
