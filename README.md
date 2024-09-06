@@ -7,17 +7,6 @@ for small and medium-sized businesses (SMBs).
 
 [cloudguardian.co](https://cloudguardian.co/)
 
-### 🧐 Features
-
-*  Post Creation / Interaction
-*  Townhall feeds and timeline
-*  Pagination of the post in Townhall
-*  Search posts and people
-*  Snip-it Creation / Interaction
-*  Friends follow/unfollow
-*  Roundtable messages Creation / Interaction
-
-
 ### 🛠️ Installation Steps:
 
 ### Prerequisites
@@ -104,9 +93,7 @@ Technologies used in the project:
 
 
 ### Support:
-For Infra and access related queries please contact to the
-[DevOps Team](https://teams.microsoft.com/l/team/19%3aCWzBqr-0ckPqGahJTR3q4H0rlavxFNDLPNbv2Dshiic1%40thread.tacv2/conversations?groupId=269d19aa-48a1-4af3-a78c-610c478d7c8a&tenantId=2743a4d4-e89a-4824-b510-8fa0e7cc02ed)
-
+For Infra and access related queries please contact to the DevOps Team
 * Narsing Chinte [narsing.chinte@refactorq.com](mailto:narsing.chinte@refactorq.com)
 
  
