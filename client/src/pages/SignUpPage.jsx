@@ -12,7 +12,7 @@ const SignUpPage = () => {
     confirmPassword: "",
   });
 
-  const { signup, loading } = useUserStore(); // Correctly destructuring the store
+  const { signup } = useUserStore(); // Correctly destructuring the store
 
   const handleChange = (event) => {
     const { name, value } = event.target;
