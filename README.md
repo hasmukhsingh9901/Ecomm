@@ -1,12 +1,11 @@
 ## Cloud Guradian
-![alt text](https://dev.web.khulke.com/static/media/logo.9bc58a3e.svg?raw=true)
 
-
-Khul Ke is a Social Networking App. A platform where users can have insightful conversations with like-minded or even get expert views. You can have deeper engagements across a wide range of interests. Khul Ke will be the most exciting social media platform for those looking at a 360-degree conversational approach
+Cloud Guardian is a fully managed cloud security assessment platform designed specifically
+for small and medium-sized businesses (SMBs).
 
 ## 🚀 Production Website
 
-[khulke.com](https://www.khulke.com/)
+[cloudguardian.com](https://cloudguardian.co/)
 
 ### 🧐 Features
 
