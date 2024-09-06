@@ -13,7 +13,7 @@ for small and medium-sized businesses (SMBs).
 * Laptop/desktop minimum 4-core CPU, 16 GB RAM and 256 GB HDD/SSD 
 * Supported Only Ubuntu-Linux or Windows
 * Jira/Bitbucket Access (Get access from devops or PM)
-* Get repo access https://bitbucket.org/loktantram-admin/khulke_node/
+* Get repo access git@github.com:RefactorQ/cloud-guardian-frontend.git
 
 #### 1. Install NVM using below link
 - [Install on Linux](curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash)
