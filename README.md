@@ -3,9 +3,7 @@
 Cloud Guardian is a fully managed cloud security assessment platform designed specifically
 for small and medium-sized businesses (SMBs).
 
-![Screenshot (196)](https://github.com/user-attachments/assets/c214d169-49c7-4887-940a-15d94c1d8e87)
-
-
+![image](https://github.com/user-attachments/assets/045c624d-8501-4fcf-bf75-9d0cdd4e9a03)
 
 
 ## 🚀 Production Website
