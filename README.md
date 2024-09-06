@@ -5,7 +5,7 @@ for small and medium-sized businesses (SMBs).
 
 ## 🚀 Production Website
 
-[Cloud Guradian](https://cloudguardian.co/)
+[Cloud Guradian](cloudguardian.co/)
 
 ### 🧐 Features
 
