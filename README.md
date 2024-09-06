@@ -6,7 +6,7 @@ for small and medium-sized businesses (SMBs).
 ## 🚀 Production Website
 
 
-<a href="https://cloudguardian.co/" target="_blank">Cloud Guardian</a>
+<a href="http://cloudguardian.co/" target="_blank">Cloud Guardian</a>
 
 
 ### 🛠️ Installation Steps:
