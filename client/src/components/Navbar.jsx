@@ -36,7 +36,7 @@ const Navbar = () => {
           )}
 
           {user && isAdmin && (
-            <Link to="/admin" className="">
+            <Link to="/dashboard" className="">
               <Lock className="inline-block mr-1" size={20} />
               <span className="hidden sm:inline">Dashboard</span>
             </Link>

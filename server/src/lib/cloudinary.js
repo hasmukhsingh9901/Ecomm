@@ -15,5 +15,16 @@ export const uploadImage = async (file) => {
   });
 };
 
+export const uploadImageToCloudinary = async (image) => {
+  try {
+    const result = await cloudinary.uploader.upload(image, {
+      folder: "products",
+    });
+    return result.secure_url; // Return the uploaded image URL
+  } catch (error) {
+    console.error("Error uploading image to Cloudinary:", error.message);
+    throw new Error("Failed to upload image");
+  }
+};
 
 export default cloudinary;

@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { useUserStore } from "./store/useUserStore";
 import { useEffect } from "react";
 import Loading from "./components/Loading";
+import AdminPage from "./pages/AdminPage";
 
 const App = () => {
   const { user, checkAuth, checkingAuth } = useUserStore();
@@ -39,6 +40,12 @@ const App = () => {
           <Route
             path="/login"
             element={!user ? <LoginPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/dashboard"
+            element={
+              user?.role === "admin" ? <AdminPage /> : <Navigate to="/" />
+            }
           />
         </Routes>
       </div>

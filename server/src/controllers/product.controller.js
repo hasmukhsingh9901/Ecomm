@@ -5,7 +5,7 @@ const getAllProduct = async (req, res, next) => {
   try {
     const products = await Product.find().lean().exec();
     res.json(products);
-  } catch (error) {}
+  } catch (error) { }
 };
 
 const featuredProduct = async (req, res, next) => {
@@ -23,28 +23,34 @@ const featuredProduct = async (req, res, next) => {
   }
 };
 const createProduct = async (req, res, next) => {
+  console.log("Inside createProduct function");
   try {
-    const { name, price, image, category, isFeatured } = req.body;
-    let cloudinaryResp = null;
+    const { name, price, image, category, isFeatured,description } = req.body;
+
+    let imageUrl = image; // Default to the provided image URL
+
+  
     if (image) {
-      cloudinaryResp = await cloudinary.uploader.upload(image, {
-        folder: "products",
-      });
+      imageUrl = await uploadImageToCloudinary(image);
     }
+
+    // Create a new product in the database
     const product = await Product.create({
       name,
       price,
-      image: cloudinaryResp?.secure_url || image,
+      image: imageUrl,
       category,
       isFeatured,
+      description
     });
 
     res.status(201).json(product);
   } catch (error) {
-    console.log("Error in getFeaturedProducts controller", error.message);
+    console.error("Error creating product:", error.message);
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
+
 
 const deleteProduct = async (req, res, next) => {
   try {
