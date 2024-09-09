@@ -127,14 +127,20 @@ const getProductsByCategory = async (req, res, next) => {
  */
 const toggleFeaturedProduct = async (req, res, next) => {
   try {
-    const update = { isFeatured: { $not: "$isFeatured" } };
-    const product = await Product.findByIdAndUpdate(req.params.id, update, {
-      new: true,
-    });
+    const product = await Product.findById(req.params.id);
+    
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
     }
-    res.json(product);
+
+    // Toggle the 'isFeatured' status by setting it to its negated value
+    product.isFeatured = !product.isFeatured;
+    
+    // Save the updated product
+    await product.save();
+    
+    res.json(product); // Respond with the updated product
+
   } catch (error) {
     console.log("Error in getFeaturedProducts controller", error.message);
     res.status(500).json({ message: "Server error", error: error.message });

@@ -12,7 +12,7 @@ router.get("/recommended",  productControllers.getRecommendedProduct);
 
 
 
-router.post("/:id", protectRoute,adminRoute, productControllers.toggleFeaturedProduct);
+router.patch("/:id", protectRoute,adminRoute, productControllers.toggleFeaturedProduct);
 
 router.delete("/:id", protectRoute,adminRoute, productControllers.deleteProduct);
 

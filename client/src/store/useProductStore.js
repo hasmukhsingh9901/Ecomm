@@ -77,7 +77,7 @@ const useProductStore = create((set) => ({
     set({ loading: true });
     try {
       const response = await axiosInstance.patch(
-        `/products/${productId}/toggle-featured`
+        `/products/${productId}`
       );
       set((prevProducts) => ({
         products: prevProducts.products.map((product) =>
