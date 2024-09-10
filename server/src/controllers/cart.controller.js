@@ -51,9 +51,9 @@ const removeAllFromCart = async (req, res) => {
       user.cartItems = []; // Clear the cart
     } else {
       // Remove specific product from cart
-      user.cartItems = user.cartItems.filter(
-        (item) => !item.id.equals(productId)
-      );
+     user.cartItems = user.cartItems.filter(
+      (item) => item.id !== productId
+     )
     }
 
     await user.save();
@@ -72,14 +72,14 @@ const updateQuantity = async (req, res) => {
     const user = req.user;
 
     const existingItem = user.cartItems.find((item) =>
-      item.id.equals(productId)
+      item.id === productId
     );
 
     if (existingItem) {
       if (quantity === 0) {
         // Remove product from cart if quantity is 0
         user.cartItems = user.cartItems.filter(
-          (item) => !item.id.equals(productId)
+          (item) => item.id !== productId
         );
       } else {
         // Update the quantity

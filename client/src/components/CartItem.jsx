@@ -4,7 +4,7 @@ import useCartStore from "../store/useCartStore";
 
 
 const CartItem = ({ item }) => {
-	const { removeFromCart, updateQuantity } = useCartStore();
+	const { removefromCart, updateQuantity } = useCartStore();
 
 	return (
 		<div className="rounded-lg border p-4 shadow-sm border-gray-700 bg-gray-800 md:p-6">
@@ -48,7 +48,7 @@ const CartItem = ({ item }) => {
 					<div className="flex items-center gap-4">
 						<button
 							className="inline-flex items-center text-sm font-medium text-red-400 hover:text-red-300 hover:underline"
-							onClick={() => removeFromCart(item._id)}
+							onClick={() => removefromCart(item._id)}
 						>
 							<Trash />
 						</button>
