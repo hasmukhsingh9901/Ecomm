@@ -29,7 +29,13 @@ app.use("/api/coupons", couponRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
+
+app.get("/", (req, res) => {
+    res.send("Welcome to the API");
+});
+
 // if (process.env.NODE_ENV === "production") {
+
 // 	app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
 // 	app.get("*", (req, res) => {
