@@ -75,20 +75,21 @@ const updateQuantity = async (req, res) => {
       item.id === productId
     );
 
-    if (existingItem) {
-      if (quantity === 0) {
-        // Remove product from cart if quantity is 0
+    if(existingItem){
+      if(quantity===0){
         user.cartItems = user.cartItems.filter(
           (item) => item.id !== productId
-        );
-      } else {
-        // Update the quantity
-        existingItem.quantity = quantity;
+        )
+
+        await user.save();
+        return res.json(user.cartItems)
       }
 
+      existingItem.quantity = quantity;
       await user.save();
-      res.json(user.cartItems);
-    } else {
+
+      res.json(user.cartItems)
+    }else{
       res.status(404).json({ message: "Product not found in cart" });
     }
   } catch (error) {
