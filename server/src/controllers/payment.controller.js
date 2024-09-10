@@ -16,15 +16,18 @@ const createCheckoutSession = async (req, res) => {
       const amount = Math.round(product.price * 100);
       totalAmount += amount * product.quantity;
 
+
+      const productImages = product.image ? [product.image] : [];
       return {
         price_data: {
           currency: "usd",
           product_data: {
             name: product.name,
-            images: [product.image],
+            images: productImages,
           },
           unit_amount: amount,
         },
+        quantity: product.quantity||1,
       };
     });
 
@@ -46,17 +49,17 @@ const createCheckoutSession = async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: `${process.env.CLIENT_URL}/purchase-success?session_id=CHECKOUT_SESSION_ID`,
+      success_url: `${process.env.CLIENT_URL}/purchase-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.CLIENT_URL}/purchase-cancel`,
       discounts: coupon
         ? [{ coupon_code: await createStripeCoupon(coupon.discountPercentage) }]
         : [],
       metadata: {
-        couponCode: couponCode || null,
         userId: req.user._id.toString(),
+        couponCode: couponCode || null,
         products: JSON.stringify(
           products.map((p) => ({
-            id: p._id.toString(),
+            id: p._id,
             quantity: p.quantity,
             price: p.price,
           }))

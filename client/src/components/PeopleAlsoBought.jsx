@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import toast from "react-hot-toast";
-import axios from "axios";
+
+import axiosInstance from "../lib/axios";
 
 const PeopleAlsoBought = () => {
   const [recommendations, setRecommendations] = useState([]);
@@ -11,8 +12,8 @@ const PeopleAlsoBought = () => {
   useEffect(() => {
     const fetchRecommendations = async () => {
       try {
-        const res = await axios.get("/products/recommended");
-        console.log(res.data);
+        const res = await axiosInstance.get("/products/recommended");
+        
         
         // Ensure that res.data is an array before setting it
         if (Array.isArray(res.data)) {
