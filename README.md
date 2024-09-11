@@ -48,7 +48,7 @@ CloudGuardian enables users to provision, manage, and monitor their cloud resour
 
 2. Install dependencies:
 
-  ```bash
-  npm install
-  # or
-  yarn install
+   ```bash
+     npm install
+     # or
+     yarn install
