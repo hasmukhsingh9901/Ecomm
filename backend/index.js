@@ -21,12 +21,12 @@ const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
 const corsOptions = {
-	origin: 'https://carry-all.vercel.app', // replace with your front-end domain
-	methods: ['GET', 'POST', 'PUT', 'DELETE'], // allowed methods
-	allowedHeaders: ['Content-Type', 'Authorization'], // allowed headers
-	credentials: true, // allow credentials (cookies, authorization headers, etc.)
-  };
-  
+	origin: 'https://carry-all.vercel.app',
+	methods: ['GET', 'POST', 'PUT', 'DELETE'],
+	allowedHeaders: ['Content-Type', 'Authorization'],
+	credentials: true,
+};
+
 
 
 app.use(express());
@@ -45,7 +45,7 @@ app.use("/api/analytics", analyticsRoutes);
 
 
 app.get("/", (req, res) => {
-    res.send("Welcome to the API");
+	res.send("Welcome to the API");
 });
 
 if (process.env.NODE_ENV === "production") {
